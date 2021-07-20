@@ -1,9 +1,9 @@
 import "./App.css";
-
+import { Quote } from "./Quote";
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <Quote />
     </div>
   );
 }
