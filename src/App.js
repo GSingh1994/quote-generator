@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { Quote } from "./Quote";
 function App() {
   return (

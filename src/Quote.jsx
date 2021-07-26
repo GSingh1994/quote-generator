@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaTwitterSquare, FaFacebookSquare } from "react-icons/fa";
 
 export function Quote() {
   const [quotes, setQuotes] = useState([]);
@@ -20,11 +21,26 @@ export function Quote() {
 
   return (
     <>
-      <h3 className="quotes-text">{newQuotes ? newQuotes.text : ""}</h3>
-      <div className="quotes-author">
-        {newQuotes ? newQuotes.author || "Anonymous" : null}
+      <div id="quote-box">
+        <h2 id="text">{newQuotes ? newQuotes.text : ""}</h2>
+        <div id="author">
+          {newQuotes ? "- " + newQuotes.author : "- Anonymous"}
+        </div>
+
+        <div className="user-section">
+          <div className="icons">
+            <a class="icon-quote" title="tweet this quote" href="">
+              <FaTwitterSquare size={30} />
+            </a>
+            <a class="icon-quote" title="share on fb" href="">
+              <FaFacebookSquare size={30} />
+            </a>
+          </div>
+          <button id="new-quote" onClick={() => setNewQuotes(quotesRandomiser)}>
+            New quote
+          </button>
+        </div>
       </div>
-      <button onClick={() => setNewQuotes(quotesRandomiser)}>New quote</button>
     </>
   );
 }
