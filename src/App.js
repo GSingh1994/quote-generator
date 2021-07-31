@@ -13,6 +13,7 @@ function App() {
       let response = await fetch("https://type.fit/api/quotes");
       const data = await response.json();
       setQuotes(data);
+      setColor(getRandColor(1));
     };
     fetchApi();
   }, []);
@@ -31,7 +32,6 @@ function App() {
 
   useEffect(() => {
     setNewQuotes(quotesRandomiser);
-    setColor(getRandColor(1));
   }, [quotes]);
 
   const handleClick = () => {

@@ -15,10 +15,14 @@ export function Quote({ color, newQuotes, handleClick }) {
 
         <div className="user-section">
           <div className="icons">
-            <a className="icon-quote" title="Tweet this Quote" href="">
+            <a
+              className="icon-quote"
+              title="Tweet this Quote"
+              href="Twitter icon"
+            >
               <FaTwitterSquare size={"3em"} color={color} />
             </a>
-            <a className="icon-quote" title="share on FB" href="">
+            <a className="icon-quote" title="share on FB" href="facebook icon">
               <FaFacebookSquare size={"3em"} color={color} />
             </a>
           </div>
