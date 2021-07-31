@@ -10,7 +10,7 @@ export function Quote({ color, newQuotes, handleClick }) {
         </h2>
 
         <div id="author">
-          {newQuotes ? "- " + newQuotes.author : "- Anonymous"}
+          {newQuotes.author ? "- " + newQuotes.author : "- Anonymous"}
         </div>
 
         <div className="user-section">
@@ -34,3 +34,7 @@ export function Quote({ color, newQuotes, handleClick }) {
     </>
   );
 }
+
+Quote.defaultProps = {
+  newQuotes: "Honesty is the best policy",
+};
