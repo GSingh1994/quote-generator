@@ -1,43 +1,33 @@
-import { useState, useEffect } from "react";
-import { FaTwitterSquare, FaFacebookSquare } from "react-icons/fa";
+import { FaQuoteLeft, FaTwitterSquare, FaFacebookSquare } from "react-icons/fa";
 
-export function Quote() {
-  const [quotes, setQuotes] = useState([]);
-  const [newQuotes, setNewQuotes] = useState();
-  const quotesRandomiser = quotes[Math.floor(Math.random() * quotes.length)]; //To select random quote from quotes array
-
-  useEffect(() => {
-    const fetchApi = async () => {
-      let response = await fetch("https://type.fit/api/quotes");
-      const data = await response.json();
-      setQuotes(data);
-    };
-    fetchApi();
-  }, []);
-
-  useEffect(() => {
-    setNewQuotes(quotesRandomiser);
-  }, [quotes]);
-
+export function Quote({ color, newQuotes, handleClick }) {
   return (
     <>
-      <div id="quote-box">
-        <h2 id="text">{newQuotes ? newQuotes.text : ""}</h2>
+      <div id="quote-box" style={{ color: color }}>
+        <h2 id="text">
+          <FaQuoteLeft style={{ marginRight: "1rem" }} />
+          {newQuotes ? newQuotes.text : ""}
+        </h2>
+
         <div id="author">
           {newQuotes ? "- " + newQuotes.author : "- Anonymous"}
         </div>
 
         <div className="user-section">
           <div className="icons">
-            <a class="icon-quote" title="tweet this quote" href="">
-              <FaTwitterSquare size={30} />
+            <a className="icon-quote" title="Tweet this Quote" href="">
+              <FaTwitterSquare size={"3em"} color={color} />
             </a>
-            <a class="icon-quote" title="share on fb" href="">
-              <FaFacebookSquare size={30} />
+            <a className="icon-quote" title="share on FB" href="">
+              <FaFacebookSquare size={"3em"} color={color} />
             </a>
           </div>
-          <button id="new-quote" onClick={() => setNewQuotes(quotesRandomiser)}>
-            New quote
+          <button
+            id="new-quote"
+            onClick={handleClick}
+            style={{ backgroundColor: color }}
+          >
+            New Quote
           </button>
         </div>
       </div>
