@@ -38,10 +38,16 @@ function App() {
     setNewQuotes(quotesRandomiser);
     setColor(getRandColor(1));
   };
+  const [state, setState] = useState(false);
 
   return (
     <div className="App" style={{ backgroundColor: color }}>
-      <Quote color={color} newQuotes={newQuotes} handleClick={handleClick} />
+      <Quote
+        color={color}
+        newQuotes={newQuotes}
+        handleClick={handleClick}
+        state={state}
+      />
     </div>
   );
 }

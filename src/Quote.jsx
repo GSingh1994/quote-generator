@@ -1,7 +1,5 @@
 import { FaQuoteLeft, FaTwitterSquare, FaFacebookSquare } from "react-icons/fa";
 
-// import { CSSTransition } from 'react-transition-group';
-
 export function Quote({ color, newQuotes, handleClick }) {
   return (
     <>
@@ -20,15 +18,18 @@ export function Quote({ color, newQuotes, handleClick }) {
             <a
               className="icon-quote"
               title="Tweet this Quote"
-              href="Twitter icon"
+              href="https://www.twitter.com/"
             >
-              <FaTwitterSquare size={"3em"} color={color} />
+              <FaTwitterSquare size={"2.5em"} color={color} />
             </a>
-            <a className="icon-quote" title="share on FB" href="facebook icon">
-              <FaFacebookSquare size={"3em"} color={color} />
+            <a
+              className="icon-quote"
+              title="share on FB"
+              href="https://www.facebook.com/"
+            >
+              <FaFacebookSquare size={"2.5em"} color={color} />
             </a>
           </div>
-
           <button
             id="new-quote"
             onClick={handleClick}

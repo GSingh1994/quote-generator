@@ -7,6 +7,8 @@
 }
 
 #quote-box {
+  animation: fadein 2s;
+
   background-color: white;
   width: 35rem;
   padding: 2rem;
@@ -37,5 +39,15 @@
     outline: none;
     border: none;
     color: white;
+    cursor: pointer;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
